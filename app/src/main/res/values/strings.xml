@@ -5,8 +5,7 @@
     <string name="settings">Settings</string>
     <string name="to_do">To Do</string>
     <string name="clock">clock</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment to do</string>
     <string name="todo_name">ToDo name...</string>
     <string name="description">Description...</string>
     <string name="time">Time...</string>
