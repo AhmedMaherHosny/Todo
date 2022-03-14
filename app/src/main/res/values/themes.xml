@@ -14,7 +14,7 @@
         <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="Theme.TodoSplashDay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.TodoSplashDay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">#dfecdb</item>
@@ -25,7 +25,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowBackground">@drawable/splashscreen</item>
         <!-- Customize your theme here. -->
     </style>
 <!--sssssssssssssssssssssssssssssssssssssbottomssssssssssssssssssssssssssssssssssss-->

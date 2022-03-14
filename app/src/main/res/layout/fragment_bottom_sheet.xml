@@ -1,65 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.bottomsheet.BottomSheetFragment"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-    android:padding="10dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <View
-                android:id="@+id/expand_line"
-                android:layout_width="60dp"
-                android:layout_height="4dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/line"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-    <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/input_name"
+    <data>
+        <variable
+            name="vm"
+            type="com.example.todo.ui.bottomsheet.BottomSheetViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.bottomsheet.BottomSheetFragment"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:padding="10dp">
+
+        <View
+            android:id="@+id/expand_line"
+            android:layout_width="60dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/line"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/expand_line"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            app:errorEnabled="true"
+            app:boxStrokeWidth="2dp"
+            app:error="@{vm.toDoNameError}">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/expand_line"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="15dp"
-                app:endIconMode="clear_text"
-                app:errorEnabled="true"
-                app:boxStrokeWidth="2dp">
+                android:hint="@string/todo_name"
+                android:textColorHint="@color/hint"
+                android:text="@={vm.toDoName}" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/todo_name"
-                    android:textColorHint="@color/hint" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/input_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:endIconMode="clear_text"
-        app:errorEnabled="true"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeWidth="2dp">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:hint="@string/description"
-            android:textColorHint="@color/hint"
-            android:inputType="text|textMultiLine" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/input_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:errorEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeWidth="2dp"
+            app:error="@{vm.toDoDescriptionError}">
 
-    </com.google.android.material.textfield.TextInputLayout>
-    <TextView
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:hint="@string/description"
+                android:textColorHint="@color/hint"
+                android:inputType="text|textMultiLine"
+                android:text="@={vm.toDoDescription}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
             android:id="@+id/time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            tools:text="12:50AM"
             android:gravity="start"
             android:textSize="17sp"
             android:background="@drawable/rounded_time"
@@ -68,24 +80,44 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:paddingVertical="15dp"
             android:paddingHorizontal="12dp"
-            app:drawableEndCompat="@drawable/ic_time" />
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/submit_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/time"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="13dp"
-        android:text="@string/submit"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:padding="16dp"
-        android:textAlignment="textStart"
-        android:drawableEnd="@drawable/ic_check"
-        android:drawableTint="@color/white"
-        android:theme="@style/MyButtonTheme"
-        app:cornerRadius="6dp"/>
+            app:drawableEndCompat="@drawable/ic_time"
+            android:layout_marginTop="5dp"
+            android:text="@string/choose_time"/>
+
+        <TextView
+            android:id="@+id/chooseDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_time"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/choose_date"
+            android:gravity="start"
+            android:textSize="17sp"
+            app:drawableEndCompat="@drawable/ic_calendar"
+            app:layout_constraintTop_toBottomOf="@id/time"
+            android:layout_marginTop="18dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/chooseDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="13dp"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:textAlignment="textStart"
+            android:drawableEnd="@drawable/ic_check"
+            android:drawableTint="@color/white"
+            android:theme="@style/MyButtonTheme"
+            app:cornerRadius="6dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
