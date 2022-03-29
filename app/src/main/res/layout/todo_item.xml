@@ -10,11 +10,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:contentPadding="8dp"
+        android:layout_margin="6dp"
         android:elevation="10dp"
         app:cardCornerRadius="8dp"
-        android:layout_margin="6dp"
-        >
+        app:contentPadding="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,66 +21,88 @@
 
             <View
                 android:id="@+id/line"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="4dp"
-                android:layout_height="80dp"
-                android:background="@drawable/line" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_check"
-                android:layout_width="70dp"
-                android:layout_height="45dp"
+                android:layout_height="0dp"
+                android:background="@drawable/line"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rightlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:cornerRadius="13dp"
-                app:icon="@drawable/ic_check"
-                app:iconSize="27dp"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconTint="@color/white" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_check"
+                    android:layout_width="70dp"
+                    android:layout_height="45dp"
+                    app:cornerRadius="13dp"
+                    app:icon="@drawable/ic_check"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="27dp"
+                    app:iconTint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/labeldone"
+                    android:layout_width="70dp"
+                    android:layout_height="45dp"
+                    android:text="@string/done"
+                    android:textColor="@color/done"
+                    android:textSize="27sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/todo_label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                tools:text="playing GTA V online."
-                app:layout_constraintTop_toTopOf="@+id/btn_check"
-                app:layout_constraintStart_toStartOf="@+id/line"
-                app:layout_constraintEnd_toStartOf="@+id/btn_check"
+                android:maxLines="2"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/purple_700"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:maxLines="2" />
+                app:layout_constraintEnd_toStartOf="@+id/rightlayout"
+                app:layout_constraintStart_toStartOf="@+id/line"
+                app:layout_constraintTop_toTopOf="@+id/rightlayout"
+                tools:text="playing GTA V online." />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/todo_label"
-                app:layout_constraintStart_toStartOf="@+id/todo_label"
-                android:orientation="horizontal"
                 android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/todo_label"
+                app:layout_constraintTop_toBottomOf="@+id/todo_label"
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/clock"
+                    android:layout_marginEnd="7dp"
                     android:contentDescription="@string/clock"
-                    app:tint="@color/text"
-                    android:layout_marginEnd="7dp" />
+                    android:src="@drawable/clock"
+                    app:tint="@color/text" />
 
                 <TextView
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="10:59 AM."
-                    android:textColor="@color/text" />
+                    android:textColor="@color/text"
+                    tools:text="10:59 AM." />
 
             </LinearLayout>
 
