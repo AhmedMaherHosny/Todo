@@ -4,16 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.todo.R
 import com.example.todo.databinding.ActivityHomeBinding
-import com.example.todo.ui.bottomsheet.BottomSheetFragment
-import com.example.todo.ui.settingfragment.SettingFragment
-import com.example.todo.ui.todofragment.ToDoFragment
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
