@@ -7,6 +7,7 @@ import java.util.*
 class ToDoRepository(private val db: ToDoDatabase) {
     suspend fun upSert(item: ToDoItem) = db.getToDoDAO().upSert(item)
     suspend fun delete(item: ToDoItem) = db.getToDoDAO().delete(item)
+    suspend fun markDone(id: Int, done: Boolean) = db.getToDoDAO().markDone(id, done)
     fun getAllToDoItems() = db.getToDoDAO().getAllToDoItems()
     fun getToDoByDate(date: Date) = db.getToDoDAO().getToDoByDate(date)
 }

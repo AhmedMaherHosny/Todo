@@ -10,6 +10,9 @@ interface ToDoDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upSert(item: ToDoItem)
 
+    @Query("UPDATE ToDoItem SET isDone=:done WHERE id=:id")
+    suspend fun markDone(id: Int, done: Boolean)
+
     @Delete
     suspend fun delete(item: ToDoItem)
 
@@ -17,5 +20,5 @@ interface ToDoDAO {
     fun getAllToDoItems(): LiveData<MutableList<ToDoItem>>
 
     @Query("SELECT * FROM ToDoItem WHERE date=:date")
-    fun getToDoByDate(date:Date) : LiveData<MutableList<ToDoItem>>
+    fun getToDoByDate(date: Date): LiveData<MutableList<ToDoItem>>
 }

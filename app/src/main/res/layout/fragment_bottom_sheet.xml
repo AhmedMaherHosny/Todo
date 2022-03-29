@@ -80,7 +80,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:paddingVertical="15dp"
             android:paddingHorizontal="12dp"
-            app:drawableEndCompat="@drawable/ic_time"
             android:layout_marginTop="5dp"
             android:text="@string/choose_time"/>
 
@@ -96,7 +95,6 @@
             android:text="@string/choose_date"
             android:gravity="start"
             android:textSize="17sp"
-            app:drawableEndCompat="@drawable/ic_calendar"
             app:layout_constraintTop_toBottomOf="@id/time"
             android:layout_marginTop="18dp"/>
 

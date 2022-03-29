@@ -12,4 +12,8 @@
     <string name="submit">Submit</string>
     <string name="choose_date">Choose Date</string>
     <string name="choose_time">Choose Time</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="there_is_no_to_dos_yet">There is no To Dos yet!</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="done">Done!</string>
 </resources>

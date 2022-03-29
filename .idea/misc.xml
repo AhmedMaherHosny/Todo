@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable-anydpi/ic_calendar.xml" value="0.1" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/bg_btn.xml" value="0.2165" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/deleteswipe.xml" value="0.1" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/line.xml" value="0.2065" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/line_done..xml" value="0.1685" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/linedone.xml" value="0.1685" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/rounded_bottom_sheet.xml" value="0.2065" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/rounded_time.xml" value="0.2165" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/drawable/splashscreen.xml" value="0.1095" />
@@ -14,7 +18,10 @@
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/layout/fragment_setteing.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/layout/fragment_setting.xml" value="0.264" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/layout/fragment_to_do.xml" value="0.264" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/layout/fragment_to_do_view.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/layout/todo.xml" value="0.1398148148148148" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/layout/todo_item.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/layout/todo_item_done.xml" value="0.264" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/Todo/app/src/main/res/menu/home_navigation_view.xml" value="0.25677083333333334" />
       </map>
     </option>

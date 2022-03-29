@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.todo.ui.todoviewfragment.ToDoViewFragmentViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.todoviewfragment.ToDoViewFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:errorEnabled="true"
+                    app:boxStrokeWidth="2dp"
+                    app:boxStrokeColor="@color/white"
+                    app:error="@{vm.toDoNameError}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/todo_name"
+                        android:textColorHint="@color/hint"
+                        android:text="@={vm.toDoName}"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/input_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:errorEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeWidth="2dp"
+                    app:error="@{vm.toDoDescriptionError}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:hint="@string/description"
+                        android:textColorHint="@color/hint"
+                        android:inputType="text|textMultiLine"
+                        android:text="@={vm.toDoDescription}"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="17sp"
+                    android:background="@drawable/rounded_time"
+                    app:layout_constraintTop_toBottomOf="@+id/description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="12dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/choose_time" />
+
+                <TextView
+                    android:id="@+id/chooseDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_time"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/choose_date"
+                    android:gravity="start"
+                    android:textSize="17sp"
+                    app:layout_constraintTop_toBottomOf="@id/time"
+                    android:layout_marginTop="18dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submit_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/chooseDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="13dp"
+                    android:text="@string/save_changes"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:padding="16dp"
+                    android:textAlignment="textStart"
+                    android:drawableEnd="@drawable/ic_check"
+                    android:drawableTint="@color/white"
+                    android:theme="@style/MyButtonTheme"
+                    app:cornerRadius="6dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>
