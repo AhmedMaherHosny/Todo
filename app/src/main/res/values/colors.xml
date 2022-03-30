@@ -13,4 +13,5 @@
     <color name="hint">#c9c9c9</color>
     <color name="arrow">#ff000000</color>
     <color name="delete">#ec4b4b</color>
+    <color name="custom">#3f3f3f</color>
 </resources>

@@ -13,9 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.navigation.ui.onNavDestinationSelected
 import com.example.todo.R
 import com.example.todo.data.db.ToDoDatabase
 import com.example.todo.data.repositories.ToDoRepository
@@ -64,9 +62,7 @@ class ToDoViewFragment : Fragment() {
         dialog.setInitialTime12(1,1,CmtpTime12.PmAm.AM)
         (activity as AppCompatActivity?)!!.supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-//            setHomeButtonEnabled(true)
             title = "To Do Edit"
-//            NavUtils.navigateUpFromSameTask(requireActivity())
         }
         calendar = Calendar.getInstance()
         calendar.time = args.date

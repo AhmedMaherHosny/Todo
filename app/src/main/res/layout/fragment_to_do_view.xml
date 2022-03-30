@@ -28,7 +28,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:errorEnabled="true"
                     app:boxStrokeWidth="2dp"
-                    app:boxStrokeColor="@color/white"
                     app:error="@{vm.toDoNameError}">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -74,6 +73,7 @@
                     android:paddingVertical="15dp"
                     android:paddingHorizontal="12dp"
                     android:layout_marginTop="5dp"
+                    android:textColor="@color/custom"
                     android:text="@string/choose_time" />
 
                 <TextView
@@ -89,7 +89,9 @@
                     android:gravity="start"
                     android:textSize="17sp"
                     app:layout_constraintTop_toBottomOf="@id/time"
-                    android:layout_marginTop="18dp" />
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/custom"
+                    />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/submit_btn"
